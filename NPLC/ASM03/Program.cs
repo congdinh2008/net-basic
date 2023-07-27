@@ -8,6 +8,22 @@
         Department accounting = new Department("Accounting");
         Department business = new Department("Business");
 
+        Employee john = new SalariedEmployee("SSN001", "John", "Doe", DateTime.Parse("1990-01-15"), "123456789", "john@example.com", 0.10, 10000, 2000);
+        Employee jane = new SalariedEmployee("SSN002", "Jane", "Smith", DateTime.Parse("1985-05-20"), "987654321", "jane@example.com", 0.08, 8000, 1500);
+        Employee mike = new SalariedEmployee("SSN003", "Mike", "Johnson", DateTime.Parse("1988-09-30"), "555555555", "mike@example.com", 0.05, 9000, 1800);
+
+        Employee alice = new HourlyEmployee("SSN101", "Alice", "Brown", DateTime.Parse("1992-03-25"), "111111111", "alice@example.com", 25, 40);
+        Employee bob = new HourlyEmployee("SSN102", "Bob", "Williams", DateTime.Parse("1987-08-10"), "222222222", "bob@example.com", 20, 30);
+        Employee emily = new HourlyEmployee("SSN103", "Emily", "Davis", DateTime.Parse("1995-12-05"), "333333333", "emily@example.com", 18, 35);
+
+        it.Employees.Add(john);
+        it.Employees.Add(jane);
+        it.Employees.Add(alice);
+
+        accounting.Employees.Add(mike);
+        accounting.Employees.Add(bob);
+        accounting.Employees.Add(emily);
+        
         vivu.Departments.Add(it);
         vivu.Departments.Add(accounting);
         vivu.Departments.Add(business);
@@ -46,26 +62,29 @@
 
         } while (!rightChoose);
 
+        CompanyManager companyManager = new CompanyManager();
+        EmployeeManager employeeManager = new EmployeeManager();
+
         switch (option)
         {
             case 1:
                 System.Console.WriteLine("---------------- Create a new Department - Menu Management ----------------");
-                Department newDepartment = vivu.CreateDepartment();
-                vivu.Departments.Add(newDepartment);
+                companyManager.CreateDepartment(vivu);
                 break;
             case 2:
-                EmployeeManager employeeManager = new EmployeeManager();
                 employeeManager.DisplayMenu(vivu);
                 break;
             case 3:
                 System.Console.WriteLine("---------------- Display List of Employees - Menu Management ----------------");
+                companyManager.DisplayListEmployees(vivu);
                 break;
             case 4:
                 System.Console.WriteLine("---------------- Classify Employees - Menu Management ----------------");
+                companyManager.ClassifyEmployees(vivu);
                 break;
             case 5:
                 System.Console.WriteLine("---------------- Department Reports - Menu Management ----------------");
-                vivu.ReportDepartments();
+                companyManager.ReportDepartments(vivu);
                 break;
             case 6:
                 System.Console.WriteLine("---------------- Exit Application - Menu Management ----------------");

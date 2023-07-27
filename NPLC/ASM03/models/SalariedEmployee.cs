@@ -23,7 +23,7 @@ public class SalariedEmployee : Employee
 
     public override string ToString()
     {
-        return string.Format("| {0,-15} | {1,-15} | {2,-15} | {3,-15} | {4,-15} | {5,-28}| {6,-15}| {7,-15}| {8,-15}|",
+        return string.Format("| {0,-15} | {1,-15} | {2,-15} | {3,-15} | {4,-15} | {5,-28} | {6,-20} | {7,-15} | {8,-15} |",
             SSN, FirstName, LastName, BirthDate, Phone, Email, CommisstionRate, GrossSales, BasicSalary);
     }
 }
