@@ -1,7 +1,7 @@
-public abstract class HourlyEmployee : Employee
+public class HourlyEmployee : Employee
 {
-    protected HourlyEmployee(string? sSN, string? firstName, string? lastName,
-        string? birthDate, string? phone, string? email, double rate, double workingHours)
+    public HourlyEmployee(string? sSN, string? firstName, string? lastName,
+        DateTime birthDate, string? phone, string? email, double rate, double workingHours)
         : base(sSN, firstName, lastName, birthDate, phone, email)
     {
         Rate = rate;

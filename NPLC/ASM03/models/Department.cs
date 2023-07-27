@@ -37,7 +37,7 @@ public class Department
 
     public override string ToString()
     {
-        return string.Format("| {0,-15} | {1,-15} | {2,-15} | {3,-15} |",
+        return string.Format("| {0,-15} | {1,-25} | {2,-25} | {3,-20} |",
             Name, Employees.Count(), CountOf<SalariedEmployee>(), CountOf<HourlyEmployee>());
     }
 }

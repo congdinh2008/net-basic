@@ -1,7 +1,7 @@
-public abstract class SalariedEmployee : Employee
+public class SalariedEmployee : Employee
 {
-    protected SalariedEmployee(string? sSN, string? firstName, string? lastName,
-        string? birthDate, string? phone, string? email, double commisstionRate,
+    public SalariedEmployee(string? sSN, string? firstName, string? lastName,
+        DateTime birthDate, string? phone, string? email, double commisstionRate,
         double grossSales, double basicSalary)
         : base(sSN, firstName, lastName, birthDate, phone, email)
     {

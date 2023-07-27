@@ -1,6 +1,6 @@
 public abstract class Employee : IEmployee
 {
-    protected Employee(string? sSN, string? firstName, string? lastName, string? birthDate, string? phone, string? email)
+    protected Employee(string? sSN, string? firstName, string? lastName, DateTime birthDate, string? phone, string? email)
     {
         SSN = sSN;
         FirstName = firstName;
@@ -13,7 +13,7 @@ public abstract class Employee : IEmployee
     public string? SSN { get; set; }
     public string? FirstName { get; set; }
     public string? LastName { get; set; }
-    public string? BirthDate { get; set; }
+    public DateTime BirthDate { get; set; }
     public string? Phone { get; set; }
     public string? Email { get; set; }
 
